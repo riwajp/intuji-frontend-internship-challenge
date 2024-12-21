@@ -29,9 +29,15 @@
   width: 380px;
   max-width: 100%;
 
+  &--lg {
+    width: 400px;
+  }
   &--numbered {
     padding: $p-md $p-md $p-lg;
     border-radius: 20px;
+  }
+  &--with-button {
+    padding-bottom: $p-md;
   }
   &--blue-border {
     border-color: #abc8d2;

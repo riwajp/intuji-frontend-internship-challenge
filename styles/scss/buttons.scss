@@ -14,7 +14,18 @@
     background-color: #4f46ba;
   }
 
-  &--rounded {
+  &--brown {
+    background-color: $brown;
+    @include font(500, 14px, auto, $white, 0);
+  }
+
+  &--lg {
+    padding: $p-md;
+  }
+  &--rounded-lg {
     border-radius: 50px;
+  }
+  &--rounded-sm {
+    border-radius: 10px;
   }
 }

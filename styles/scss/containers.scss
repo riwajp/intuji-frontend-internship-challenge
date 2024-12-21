@@ -19,3 +19,18 @@
     background-color: #f5f6f8;
   }
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &--gap-md {
+    gap: $gap-md;
+  }
+
+  &--gap-lg {
+    gap: $gap-lg;
+  }
+}

@@ -21,8 +21,25 @@
   word-spacing: 0;
   background-color: #4f46ba;
 }
-.button--rounded {
+.button--brown {
+  background-color: #ff7f5c;
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: auto;
+  color: #ffffff;
+  word-spacing: 0;
+}
+.button--lg {
+  padding: 20px;
+}
+.button--rounded-lg {
   border-radius: 50px;
+}
+.button--rounded-sm {
+  border-radius: 10px;
 }
 
 .container--xxl {
@@ -40,6 +57,19 @@
 }
 .container--gray {
   background-color: #f5f6f8;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.row--gap-md {
+  gap: 16px;
+}
+.row--gap-lg {
+  gap: 32px;
 }
 
 .quote {
@@ -84,9 +114,15 @@
   width: 380px;
   max-width: 100%;
 }
+.card--lg {
+  width: 400px;
+}
 .card--numbered {
   padding: 20px 20px 36px;
   border-radius: 20px;
+}
+.card--with-button {
+  padding-bottom: 20px;
 }
 .card--blue-border {
   border-color: #abc8d2;
@@ -662,6 +698,81 @@
   gap: 32px;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.faq__title {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 71px;
+  line-height: 76px;
+  color: #000000;
+  word-spacing: -3%;
+  padding-block: 36px;
+  max-width: 590px;
+}
+.faq__content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.faq__items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faq__item {
+  border: 1px solid #cfcfcf;
+  padding: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+.faq__question {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 22px;
+  color: #000000;
+  word-spacing: 0;
+  display: block;
+}
+.faq__answer {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 31px;
+  color: #000000;
+  word-spacing: -2%;
+  margin-top: 32px;
+}
+
+.banner {
+  background-color: #3734a9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  padding: 64px;
+  border-radius: 20px;
+  text-align: center;
+}
+.banner__text {
+  font-family: "Manrope", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 61px;
+  color: #ffffff;
+  word-spacing: -3%;
+  max-width: 768px;
 }
 
 /*# sourceMappingURL=style.css.map */
