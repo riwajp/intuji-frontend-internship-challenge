@@ -1,0 +1,280 @@
+@import "variables/colors.scss";
+@import "variables/spacing.scss";
+@import "variables/typography.scss";
+@import "buttons.scss";
+@import "containers.scss";
+@import "misc.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo-text {
+    @include font(800, 20px, auto, $black, 0);
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+
+  &__links {
+    display: flex;
+    gap: $gap-lg;
+    list-style: none;
+  }
+
+  &__link {
+    @include font(500, 14px, auto, $black, 0);
+    cursor: pointer;
+
+    &--expandable::after {
+      content: "";
+      display: inline-block;
+      width: 14px; /* Set width for the icon */
+      height: 7px;
+      margin-left: $m-sm;
+      margin-top: -2px;
+      background-image: url("../../assets/icons/caret-down.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      vertical-align: middle;
+    }
+  }
+
+  &__auth {
+    display: flex;
+    gap: $gap-lg;
+    align-items: center;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-lg;
+  padding-block: $p-xxl $p-xxl;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md;
+  }
+
+  &__title {
+    @include font(800, 60px, 80px, $black, -3%);
+    width: 670px;
+    max-width: 100%;
+  }
+  &__subtitle {
+    @include font(500, 20px, 30px, $gray);
+    width: 510px;
+    max-width: 100%;
+  }
+}
+
+.partners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $gap-lg;
+  padding-block: $p-lg;
+  &__title {
+    @include font(500, 22, auto, $black, 0);
+  }
+
+  &__brands {
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: $gap-xl;
+  }
+
+  &__brand-image {
+    max-width: 138px;
+  }
+}
+
+.portfolio-tracking {
+  display: flex;
+  flex-direction: column;
+  padding-block: $p-lg;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md;
+  }
+  &__title {
+    @include font(800, 56px, 66px, $black, -3%);
+    width: 645px;
+    max-width: 100%;
+  }
+
+  &__subtitle {
+    @include font(500, 16px, 29px, $black);
+    width: 450px;
+    max-width: 100%;
+  }
+  &__steps {
+    display: flex;
+    gap: $gap-md;
+    margin-top: $m-xl;
+    justify-content: space-between;
+  }
+}
+
+.feature {
+  display: flex;
+  justify-content: space-between;
+
+  &__image {
+    width: 100%;
+  }
+  &__about {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-lg;
+  }
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-sm;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md;
+  }
+
+  &__tag {
+    text-transform: uppercase;
+    @include font(700, 14px, auto, $blue);
+  }
+
+  &__title {
+    @include font(800, 50px, 60px, $black, -3%);
+  }
+
+  &__subtitle {
+    @include font(500, 18px, 30px, $gray);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-xs;
+  }
+
+  &__list-item {
+    @include font(500, 19px, 30px, $gray);
+    margin-left: 16px;
+  }
+}
+
+.features {
+  padding-block: $p-xxl;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-lg;
+  &__title {
+    @include font(800, 71px, 66px, $black, -3%);
+  }
+
+  &__subtitle {
+    @include font(600, 16px, 29px, $black);
+    width: 557px;
+    max-width: 100%;
+  }
+  &__items {
+    display: flex;
+    gap: $gap-sm;
+    justify-content: space-between;
+  }
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-lg;
+  }
+}
+
+.testimonials {
+  padding-block: $p-xxl;
+  display: flex;
+  flex-direction: column;
+
+  gap: $gap-xl;
+
+  &__head {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-lg;
+  }
+  &__title {
+    @include font(800, 71px, 66px, $black, -3%);
+  }
+
+  &__subtitle {
+    @include font(600, 16px, 29px, $black);
+    width: 557px;
+    max-width: 100%;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    gap: $gap-lg;
+    overflow-x: hidden;
+  }
+}
+
+.stats {
+  padding-block: $p-lg;
+  display: flex;
+  gap: $gap-lg;
+  align-items: center;
+  &__subtitle {
+    padding-left: $p-lg $p-md $p-md;
+    width: 143px;
+    @include font(400, 19px, 31px, $white);
+  }
+
+  &__items {
+    padding-inline: $p-md;
+    display: flex;
+    gap: $gap-lg;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+}
+
+.blogs {
+  &__title {
+    @include font(800, 71px, 66px, $black, -3%);
+    padding-block: $p-xxl;
+  }
+
+  &__items {
+    display: flex;
+    gap: $gap-lg;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,21 @@
+.container {
+  &--xxl {
+    padding: $p-lg $p-xxl;
+  }
+
+  &--blue {
+    background-color: $blue;
+  }
+
+  &--lightblue {
+    background-color: #c9e7f2;
+  }
+  &--primary {
+    background: #62bada;
+    background: linear-gradient(300deg, #62bada 0%, #c9e7f2 100%);
+  }
+
+  &--gray {
+    background-color: #f5f6f8;
+  }
+}
