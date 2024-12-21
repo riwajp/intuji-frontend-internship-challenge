@@ -1,3 +1,4 @@
+@import "variables/screens.scss";
 @import "variables/colors.scss";
 @import "variables/spacing.scss";
 @import "variables/typography.scss";
@@ -20,17 +21,32 @@
 
   &__logo-text {
     @include font(800, 20px, auto, $black, 0);
+    flex-grow: 1;
   }
 }
 
 .nav {
-  display: flex;
-  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  // display: flex;
+  display: none;
+  align-items: center;
+  flex-grow: 1;
+  width: 250px;
+  background-color: $lightblue;
+  height: 100vh;
+  padding: $p-xl $p-lg;
+
+  flex-direction: column;
+  gap: $gap-lg;
 
   &__links {
     display: flex;
     gap: $gap-lg;
     list-style: none;
+    width: 100%;
+    flex-direction: column;
   }
 
   &__link {
@@ -54,7 +70,31 @@
   &__auth {
     display: flex;
     gap: $gap-lg;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  @media (min-width: $screen-lg) {
+    position: relative;
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    background-color: unset;
+    height: unset;
+    padding: 0;
+    flex-grow: 1;
+    width: unset;
+    &__links {
+      flex-direction: row;
+      width: unset;
+    }
+
+    &__auth {
+      flex-direction: row;
+      align-items: center;
+      width: unset;
+    }
   }
 }
 
@@ -135,8 +175,16 @@
 
   &__head {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+    flex-direction: column;
+    gap: $gap-md;
+
+    @media only screen and (min-width: $screen-lg) {
+      gap: 0;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
   &__about {
     display: flex;
@@ -159,6 +207,12 @@
     gap: $gap-md;
     margin-top: $m-xl;
     justify-content: space-between;
+    flex-direction: column;
+
+    @media only screen and (min-width: $screen-md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 }
 
@@ -168,6 +222,7 @@
 
   &__image {
     width: 100%;
+    min-width: 500px;
   }
   &__about {
     display: flex;
