@@ -11,7 +11,8 @@
 
   &--primary {
     @include font(500, 14px, auto, $white, 0);
-    background-color: #4f46ba;
+    background-color: $blue;
+    padding-block: 16px;
   }
 
   &--brown {

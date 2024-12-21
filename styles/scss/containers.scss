@@ -14,9 +14,30 @@
     background: #62bada;
     background: linear-gradient(300deg, #62bada 0%, #c9e7f2 100%);
   }
-
   &--gray {
     background-color: #f5f6f8;
+  }
+
+  &--hero {
+    position: relative;
+    &::after {
+      content: "";
+      background-image: url("/assets/images/backgrounds/hero-bg.png"),
+        url("/assets/images/backgrounds/pattern-1.png"),
+        url("/assets/images/backgrounds/pattern-2.png"),
+        url("/assets/images/backgrounds/pattern-3.png");
+
+      background-repeat: no-repeat;
+      background-size: 30%, 110px, 110px, 110px;
+      background-position: 80% calc(100% + 50px), 0 90%, 100% 160px,
+        100% calc(100% + 100px);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+    }
   }
 }
 
@@ -25,6 +46,10 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  &--gap-sm {
+    gap: $gap-sm;
+  }
 
   &--gap-md {
     gap: $gap-md;

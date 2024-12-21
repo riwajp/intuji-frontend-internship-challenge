@@ -188,3 +188,30 @@
     @include font(700, 29px, 36px, $black);
   }
 }
+
+.check-list {
+  list-style-type: none;
+  padding-left: 0;
+
+  &__item {
+    position: relative;
+    padding-left: 26px;
+    margin: 10px 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      background-image: url("/assets/icons/check.png");
+      background-size: 8px 6px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: $blue;
+      border-radius: 50%;
+    }
+  }
+}

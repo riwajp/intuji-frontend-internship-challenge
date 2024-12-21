@@ -1,0 +1,32 @@
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  &--blue {
+    background-color: $blue;
+  }
+
+  &--green {
+    background-color: #22d497;
+  }
+
+  &__sprite {
+    width: 8px;
+    object-fit: contain;
+  }
+
+  &--lg {
+    width: 60px;
+    height: 60px;
+    &__sprite {
+      width: 25px;
+      object-fit: contain;
+    }
+  }
+}
