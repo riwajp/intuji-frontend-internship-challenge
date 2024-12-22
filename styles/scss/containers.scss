@@ -1,6 +1,9 @@
 .container {
   &--xxl {
-    padding: $p-lg $p-xxl;
+    padding: $p-xl $p-lg;
+    @media (min-width: $screen-lg) {
+      padding: $p-lg $p-xxl;
+    }
   }
 
   &--blue {
@@ -24,12 +27,11 @@
     &::after {
       content: "";
       background-image: url("/assets/images/backgrounds/pattern-1.png"),
-        url("/assets/images/backgrounds/pattern-2.png"),
         url("/assets/images/backgrounds/pattern-3.png");
 
       background-repeat: no-repeat;
-      background-size: 110px, 110px, 110px;
-      background-position: 0 90%, 100% 160px, 100% calc(100% + 100px);
+      background-size: 110px, 110px;
+      background-position: 0 90%, 100% calc(100% + 100px);
       position: absolute;
       bottom: 0;
       right: 0;
@@ -37,7 +39,8 @@
       width: 100%;
       z-index: -1;
     }
-    @media (min-width: $screen-lg) {
+
+    @media (min-width: $screen-md) {
       &::after {
         content: "";
         background-image: url("/assets/images/backgrounds/hero-bg.png"),
@@ -49,12 +52,6 @@
         background-size: 30%, 110px, 110px, 110px;
         background-position: 80% calc(100% + 50px), 0 90%, 100% 160px,
           100% calc(100% + 100px);
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
       }
     }
   }

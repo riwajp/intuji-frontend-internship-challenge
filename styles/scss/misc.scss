@@ -4,9 +4,10 @@
   border-radius: 20px;
 
   max-width: 100%;
+  width: 100%;
 
   &--compact {
-    width: 402px;
+    width: 100%;
   }
   &__text {
     @include font(500, 15px, 22px, $black);
@@ -15,6 +16,12 @@
   &__source {
     margin-top: $m-md;
     @include font(500, 15px, 22px, $black);
+  }
+
+  @media (min-width: $screen-md) {
+    &--compact {
+      width: 402px;
+    }
   }
 }
 
@@ -26,12 +33,16 @@
   background-color: $white;
   border: 1px solid #dbe4e9;
   border-radius: 10px;
-  width: 380px;
-  max-width: 100%;
+  width: 100%;
 
-  &--lg {
-    width: 400px;
+  @media (min-width: screen-md) {
+    max-width: 600px;
+    width: 380px;
+    &--lg {
+      width: 400px;
+    }
   }
+
   &--numbered {
     padding: $p-md $p-md $p-lg;
     border-radius: 20px;
@@ -106,10 +117,14 @@
   width: 699px;
   max-width: 100%;
   flex-shrink: 0;
+  flex-direction: column-reverse;
 
   &__image {
-    height: 100%;
-    max-width: 240px;
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-inline: auto;
   }
   &__content {
     display: flex;
@@ -124,6 +139,18 @@
   &__author {
     @include font(600, 20px, 22px, $black);
   }
+  @media (min-width: $screen-md) {
+    flex-direction: row;
+
+    &__image {
+      height: 100%;
+      max-width: 240px;
+      width: unset;
+
+      object-fit: contain;
+      border-radius: 0;
+    }
+  }
 }
 
 .stat {
@@ -131,39 +158,41 @@
   flex-direction: column;
   gap: $gap-md;
   &__number {
-    @include font(800, 72px, 72px, $white);
+    @include font(600, 36px, 36px, $white);
   }
   &__desc {
-    @include font(400, 30px, 31px, $white);
+    @include font(400, 16px, 16px, $white);
+  }
+
+  @media (min-width: $screen-md) {
+    &__number {
+      @include font(800, 42px, 42px, $white);
+    }
+    &__desc {
+      @include font(400, 24px, 24px, $white);
+    }
+  }
+
+  @media (min-width: $screen-lg) {
+    &__number {
+      @include font(800, 72px, 72px, $white);
+    }
+    &__desc {
+      @include font(400, 30px, 31px, $white);
+    }
   }
 }
 
 .blog-card {
   display: flex;
   flex-direction: column;
-  gap: $gap-lg;
-  max-width: 382px;
+
+  gap: $gap-sm;
+
+  max-width: 100%;
 
   &__head {
     gap: $gap-xs;
-  }
-  &--featured {
-    flex-direction: row;
-    justify-content: space-between;
-    max-height: 325px;
-    max-width: 100%;
-    width: 100%;
-    padding-block: $p-lg;
-
-    &__image {
-      height: 100%;
-      width: auto;
-      max-width: 500px;
-    }
-
-    &__link {
-      @include font(600, 16px, 16px, #1b1c31, 0);
-    }
   }
 
   &__image {
@@ -175,17 +204,70 @@
     padding: $p-md;
     display: flex;
     flex-direction: column;
-    gap: $gap-xl;
+    gap: $gap-md;
     max-width: 525px;
   }
 
   &__tag {
-    @include font(700, 16px, 36px, $black, 7%);
+    @include font(600, 14px, 22px, $black, 7%);
     text-transform: uppercase;
   }
 
   &__title {
-    @include font(700, 29px, 36px, $black);
+    @include font(600, 24px, 24px, $black);
+  }
+
+  @media (min-width: $screen-md) {
+    max-width: 382px;
+    gap: $gap-lg;
+    &__content {
+      padding: $p-md;
+      display: flex;
+      flex-direction: column;
+      gap: $gap-xl;
+      max-width: 525px;
+    }
+
+    &__tag {
+      @include font(700, 16px, 36px, $black, 7%);
+      text-transform: uppercase;
+    }
+
+    &__title {
+      @include font(700, 29px, 36px, $black);
+    }
+  }
+
+  &--featured {
+    flex-direction: column;
+    justify-content: space-between;
+
+    max-width: 100%;
+    width: 100%;
+    padding-block: $p-lg;
+
+    &__image {
+      height: auto;
+      width: 100%;
+      max-height: 500px;
+    }
+
+    &__link {
+      @include font(600, 16px, 16px, #1b1c31, 0);
+    }
+
+    @media (min-width: $screen-md) {
+      flex-direction: row;
+      max-height: 325px;
+      max-width: 100%;
+      width: 100%;
+      padding-block: $p-lg;
+      &__image {
+        height: 100%;
+        width: auto;
+        max-width: 500px;
+      }
+    }
   }
 }
 
