@@ -18,6 +18,9 @@ This project is a static website built as part of the "Intuji Frontend Internshi
 - **CSS3**: For styling and layout.
 - **Vanilla JavaScript**: For adding interactivity and dynamic features.
 
+## Deployment
+This website is deployed at: https://riwajp.github.io/intuji-frontend-internship-challenge/
+
 ## Getting Started
 
 1. Clone the repository to your local machine:
