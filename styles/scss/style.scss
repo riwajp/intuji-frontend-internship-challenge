@@ -124,6 +124,7 @@
   &__cta {
     margin-top: $m-lg;
     display: flex;
+    flex-direction: column;
     gap: $gap-lg;
   }
 
@@ -140,6 +141,12 @@
     display: flex;
     gap: $gap-sm;
     align-items: center;
+  }
+
+  @media (min-width: $screen-md) {
+    &__cta {
+      flex-direction: row;
+    }
   }
 }
 
@@ -382,7 +389,7 @@
 .blogs {
   &__title {
     @include font(800, 71px, 66px, $black, -3%);
-    padding-block: $p-xxl;
+    padding-block: $p-xl;
   }
 
   &__items {
@@ -454,6 +461,57 @@
     &__text {
       @include font(800, 56px, 61px, $white, -3%);
       max-width: 768px;
+    }
+  }
+}
+
+.footer {
+  padding-block: $p-lg;
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $gap-xl;
+    padding-block: $p-xl;
+  }
+
+  &__company-name {
+    @include font(700, 21px, 28px, $black);
+  }
+
+  &__company-desc {
+    @include font(500, 16px, 28px, #757095);
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: $gap-md;
+  }
+
+  &__section-title {
+    @include font(700, 21px, 24px, $black, 0);
+  }
+  &__section-body {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md;
+    @include font(500, 16px, 24px, $black, 0);
+    &--compact {
+      gap: $gap-sm;
+    }
+  }
+
+  &__copyright {
+    @include font(500, 16px, 26px, #181433);
+    text-align: center;
+    padding-top: $p-xl;
+  }
+  @media (min-width: $screen-md) {
+    &__main {
+      flex-direction: row;
+      justify-content: space-between;
     }
   }
 }

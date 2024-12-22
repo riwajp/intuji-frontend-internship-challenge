@@ -297,3 +297,24 @@
     }
   }
 }
+
+.text-input {
+  padding: $p-sm;
+  max-width: 250px;
+  max-width: 100%;
+  background-color: #eeeeff;
+  color: #181433;
+  border: 0;
+  height: 51px;
+}
+
+.email-form {
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+
+.input-info {
+  @include font(500, 16px, 26px, $gray);
+  max-width: 330px;
+}
