@@ -153,7 +153,7 @@ a {
 
 .partners {
   @include flex(column, $gap-lg, flex-start, center);
-  padding-block: $p-lg calc($p-xl + 36px);
+  padding-block: $p-lg calc($p-xl + 44px);
   overflow: hidden;
   position: relative;
   &__title {
@@ -162,7 +162,7 @@ a {
 
   &__brands {
     position: absolute;
-    top: 98px;
+    top: 120px;
 
     max-width: 100%;
     overflow: visible;
@@ -184,7 +184,7 @@ a {
   padding-block: $p-lg;
 
   &__head {
-    @include flex(column, $gap-md);
+    @include flex(column, $gap-lg);
 
     @media only screen and (min-width: $screen-lg) {
       gap: 0;

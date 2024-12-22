@@ -197,14 +197,19 @@
     @include font(600, 36px, 36px, $white);
   }
   &__desc {
-    @include font(400, 16px, 16px, $white);
+    @include font(400, 14px, 16px, $white);
+    margin-top: auto;
   }
 
   &__desc-icon {
-    width: 20px;
-    margin-right: 10px;
+    width: 16px;
+    margin-right: 6px;
   }
   @media (min-width: $screen-md) {
+    &__desc-icon {
+      width: 20px;
+      margin-right: 10px;
+    }
     &__number {
       @include font(800, 42px, 42px, $white);
     }

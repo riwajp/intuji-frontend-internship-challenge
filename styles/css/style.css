@@ -477,16 +477,21 @@
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 16px;
   color: #ffffff;
   word-spacing: -2%;
+  margin-top: auto;
 }
 .stat__desc-icon {
-  width: 20px;
-  margin-right: 10px;
+  width: 16px;
+  margin-right: 6px;
 }
 @media (min-width: 900px) {
+  .stat__desc-icon {
+    width: 20px;
+    margin-right: 10px;
+  }
   .stat__number {
     font-family: "Manrope", serif;
     font-optical-sizing: auto;
@@ -943,7 +948,7 @@ a::after {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  padding-block: 36px 100px;
+  padding-block: 36px 108px;
   overflow: hidden;
   position: relative;
 }
@@ -959,7 +964,7 @@ a::after {
 }
 .partners__brands {
   position: absolute;
-  top: 98px;
+  top: 120px;
   max-width: 100%;
   overflow: visible;
   display: flex;
@@ -989,7 +994,7 @@ a::after {
 .portfolio-tracking__head {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: nowrap;
