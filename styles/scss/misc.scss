@@ -46,11 +46,17 @@
   border: 1px solid #dbe4e9;
   border-radius: 10px;
   max-width: 600px;
+  position: relative;
 
   &--expand-full {
     max-width: 100%;
   }
   @media (min-width: screen-md) {
+    &:hover {
+      transform: translateY(-100px);
+      transition: 0.3s;
+      bottom: 100px;
+    }
     max-width: 600px;
     width: 380px;
     &--lg {
@@ -287,6 +293,10 @@
 
     &__link {
       @include font(600, 16px, 16px, #1b1c31, 0);
+    }
+    &__link-icon {
+      width: 12px;
+      margin-left: 8px;
     }
 
     @media (min-width: $screen-md) {

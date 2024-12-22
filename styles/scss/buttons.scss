@@ -13,11 +13,20 @@
     @include font(500, 14px, auto, $white, 0);
     background-color: $blue;
     padding-block: 16px;
+    &:hover {
+      background-color: darken($blue, 18);
+      transition: 0.3s;
+    }
   }
 
   &--brown {
     background-color: $brown;
     @include font(500, 14px, auto, $white, 0);
+
+    &:hover {
+      background-color: darken($brown, 18);
+      transition: 0.3s;
+    }
   }
 
   &--lg {

@@ -14,11 +14,9 @@
 }
 
 .container {
-  &--xxl {
-    padding: $p-xl $p-lg;
-    @media (min-width: $screen-lg) {
-      padding: $p-lg $p-xxl;
-    }
+  padding: $p-xl $p-lg;
+  @media (min-width: $screen-lg) {
+    padding: $p-lg $p-xxl;
   }
 
   &--blue {
