@@ -100,18 +100,7 @@
     background-repeat: no-repeat;
     background-size: 30%, 110px, 110px, 110px;
     background-position: 80% calc(100% + 50px), 0 90%, 100% 160px, 100% calc(100% + 100px);
-    animation: moveUpDown 4s ease-in-out infinite;
-  }
-}
-@keyframes moveUpDown {
-  0% {
-    background-position: 80% calc(100% + 50px), 0 90%, 100% 160px, 100% calc(100% + 100px);
-  }
-  50% {
-    background-position: 80% calc(100% + 100px), 0 90%, 100% 160px, 100% calc(100% + 100px);
-  }
-  100% {
-    background-position: 80% calc(100% + 50px), 0 90%, 100% 160px, 100% calc(100% + 100px);
+    animation: moveUpDown 3s ease-in-out infinite;
   }
 }
 
@@ -195,16 +184,16 @@
     transform: translateX(0%);
   }
   10% {
-    transform: translateX(-10%);
+    transform: translateX(0%);
   }
   20% {
-    transform: translateX(-20%);
+    transform: translateX(-10%);
   }
   30% {
-    transform: translateX(-30%);
+    transform: translateX(-20%);
   }
   40% {
-    transform: translateX(-40%);
+    transform: translateX(-30%);
   }
   50% {
     transform: translateX(-40%);
@@ -220,6 +209,17 @@
   }
   100% {
     transform: translateX(0%);
+  }
+}
+@keyframes moveUpDown {
+  0% {
+    background-position: 80% calc(100% + 50px), 0 90%, 100% 160px, 100% calc(100% + 100px);
+  }
+  50% {
+    background-position: 80% calc(100% + 100px), 0 90%, 100% 160px, 100% calc(100% + 100px);
+  }
+  100% {
+    background-position: 80% calc(100% + 50px), 0 90%, 100% 160px, 100% calc(100% + 100px);
   }
 }
 .quote {
@@ -391,12 +391,24 @@
   padding: 20px;
   border: 1px solid #cfcfcf;
   border-radius: 10px;
-  width: 699px;
+  width: 425px;
   max-width: 100%;
   flex-shrink: 0;
   flex-direction: column-reverse;
   position: relative;
   overflow-y: visible;
+}
+.testimonial::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 32px;
+  width: 44px;
+  height: 44px;
+  background-image: url("/assets/icons/quote.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 1000;
 }
 .testimonial__image {
   width: 125px;
@@ -434,6 +446,7 @@
 @media (min-width: 900px) {
   .testimonial {
     flex-direction: row;
+    width: 699px;
   }
   .testimonial__image {
     height: 100%;
@@ -529,7 +542,9 @@
 }
 .blog-card__image {
   max-width: 100%;
-  height: auto;
+  height: 202px;
+  object-fit: cover;
+  margin-top: auto;
 }
 .blog-card__content {
   padding: 20px;
@@ -1207,6 +1222,7 @@ a::after {
 
 .testimonials {
   padding-block: 128px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -1252,8 +1268,12 @@ a::after {
   justify-content: flex-start;
   align-items: stretch;
   flex-wrap: nowrap;
-  width: 100%;
-  overflow-x: hidden;
+  width: fit-content;
+  overflow: visible;
+  animation: moveLeftRight 8s infinite ease-in-out;
+}
+.testimonials__items:hover {
+  animation-play-state: paused;
 }
 @media (min-width: 900px) {
   .testimonials__title {
@@ -1336,11 +1356,9 @@ a::after {
   display: flex;
   flex-direction: row;
   gap: 32px;
-  justify-content: flex-start;
-  align-items: stretch;
-  flex-wrap: nowrap;
-  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
 .faq__title {

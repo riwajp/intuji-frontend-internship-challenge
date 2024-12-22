@@ -135,25 +135,25 @@
   padding: $p-md;
   border: 1px solid #cfcfcf;
   border-radius: 10px;
-  width: 699px;
+  width: 425px;
   max-width: 100%;
   flex-shrink: 0;
   flex-direction: column-reverse;
   position: relative;
   overflow-y: visible;
 
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: -22px;
-  //   left: 32px;
-  //   width: 44px;
-  //   height: 44px;
-  //   background-image: url("/assets/icons/quote.png");
-  //   background-size: contain;
-  //   background-repeat: no-repeat;
-  //   z-index: 1000;
-  // }
+  &::before {
+    content: "";
+    position: absolute;
+    top: -22px;
+    left: 32px;
+    width: 44px;
+    height: 44px;
+    background-image: url("/assets/icons/quote.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1000;
+  }
   &__image {
     width: 125px;
     height: 125px;
@@ -176,6 +176,7 @@
   }
   @media (min-width: $screen-md) {
     flex-direction: row;
+    width: 699px;
 
     &__image {
       height: 100%;
@@ -236,7 +237,9 @@
 
   &__image {
     max-width: 100%;
-    height: auto;
+    height: 202px;
+    object-fit: cover;
+    margin-top: auto;
   }
 
   &__content {

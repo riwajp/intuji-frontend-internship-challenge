@@ -319,7 +319,7 @@ a {
 
 .testimonials {
   padding-block: $p-xxl;
-
+  overflow: hidden;
   @include flex(column, $gap-xl);
 
   &__head {
@@ -339,8 +339,13 @@ a {
 
   &__items {
     @include flex(row, $gap-lg);
-    width: 100%;
-    overflow-x: hidden;
+    width: fit-content;
+    overflow: visible;
+    animation: moveLeftRight 8s infinite ease-in-out;
+
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 
   @media (min-width: $screen-md) {
@@ -399,9 +404,7 @@ a {
   }
 
   &__items {
-    @include flex(row, $gap-lg);
-    flex-wrap: wrap;
-    justify-content: space-between;
+    @include flex(row, $gap-lg, space-between, stretch, wrap);
   }
 }
 
