@@ -1,11 +1,13 @@
 @mixin flex(
   $direction: row,
+  $gap: $gap-sm,
   $justify: flex-start,
   $align: stretch,
   $wrap: nowrap
 ) {
   display: flex;
   flex-direction: $direction;
+  gap: $gap;
   justify-content: $justify;
   align-items: $align;
   flex-wrap: $wrap;
@@ -65,14 +67,29 @@
         background-size: 30%, 110px, 110px, 110px;
         background-position: 80% calc(100% + 50px), 0 90%, 100% 160px,
           100% calc(100% + 100px);
+        animation: moveUpDown 4s ease-in-out infinite;
+      }
+    }
+
+    @keyframes moveUpDown {
+      0% {
+        background-position: 80% calc(100% + 50px), 0 90%, 100% 160px,
+          100% calc(100% + 100px);
+      }
+      50% {
+        background-position: 80% calc(100% + 100px), 0 90%, 100% 160px,
+          100% calc(100% + 100px);
+      }
+      100% {
+        background-position: 80% calc(100% + 50px), 0 90%, 100% 160px,
+          100% calc(100% + 100px);
       }
     }
   }
 }
 
 .row {
-  align-items: center;
-  @include flex(row, flex-start, center);
+  @include flex(row, auto, flex-start, center);
   &--gap-sm {
     gap: $gap-sm;
   }

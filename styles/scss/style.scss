@@ -6,6 +6,7 @@
 @import "containers.scss";
 @import "images.scss";
 @import "misc.scss";
+@import "animation.scss";
 
 * {
   margin: 0;
@@ -15,9 +16,7 @@
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row, auto, space-between, center);
 
   &__logo-text {
     @include font(800, 20px, auto, $black, 0);
@@ -26,27 +25,19 @@
 }
 
 .nav {
+  @include flex(column, $gap-lg);
   position: fixed;
   top: 0;
   right: 0;
-  // display: flex;
   display: none;
-  align-items: center;
-  flex-grow: 1;
-  width: 250px;
   background-color: $lightblue;
   height: 100vh;
   padding: $p-xl $p-lg;
 
-  flex-direction: column;
-  gap: $gap-lg;
-
   &__links {
-    display: flex;
-    gap: $gap-lg;
+    @include flex(column, $gap-lg);
     list-style: none;
     width: 100%;
-    flex-direction: column;
   }
 
   &__link {
@@ -68,10 +59,8 @@
   }
 
   &__auth {
-    display: flex;
-    gap: $gap-lg;
+    @include flex(column, $gap-lg);
     width: 100%;
-    flex-direction: column;
   }
 
   @media (min-width: $screen-lg) {
@@ -99,15 +88,11 @@
 }
 
 .hero {
-  display: flex;
-  flex-direction: column;
-  gap: $gap-lg;
+  @include flex(column, $gap-lg);
   padding-block: $p-xxl $p-xxl;
 
   &__content {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-md;
+    @include flex(column, $gap-md);
   }
 
   &__title {
@@ -115,6 +100,7 @@
     width: 670px;
     max-width: 100%;
   }
+
   &__subtitle {
     @include font(500, 20px, 30px, $gray);
     width: 510px;
@@ -123,24 +109,21 @@
 
   &__cta {
     margin-top: $m-lg;
-    display: flex;
-    flex-direction: column;
-    gap: $gap-lg;
+    @include flex(column, $gap-lg);
   }
 
   &__cta-text {
     @include font(500, 17px, 30px, $blue);
   }
+
   &__features {
     margin-top: $m-lg;
-    display: flex;
-    gap: $gap-lg;
+    @include flex(row, $gap-lg);
   }
+
   &__feature {
     @include font(500, 17px, 30px, #757095);
-    display: flex;
-    gap: $gap-sm;
-    align-items: center;
+    @include flex(row, $gap-sm, center);
   }
 
   @media (min-width: $screen-md) {
@@ -151,23 +134,26 @@
 }
 
 .partners {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: $gap-lg;
-  padding-block: $p-lg;
+  @include flex(column, $gap-lg, flex-start, center);
+  padding-block: $p-lg calc($p-xl + 36px);
+  overflow: hidden;
+  position: relative;
   &__title {
     @include font(500, 22, auto, $black, 0);
   }
 
   &__brands {
+    position: absolute;
+    top: 98px;
+
     max-width: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: $gap-xl;
+    overflow: visible;
+    @include flex(row, $gap-xl);
+    animation: moveLeftRight 8s infinite ease-in-out;
+
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 
   &__brand-image {
@@ -176,28 +162,24 @@
 }
 
 .portfolio-tracking {
-  display: flex;
-  flex-direction: column;
+  @include flex(column);
   padding-block: $p-lg;
 
   &__head {
-    display: flex;
-
-    flex-direction: column;
-    gap: $gap-md;
+    @include flex(column, $gap-md);
 
     @media only screen and (min-width: $screen-lg) {
       gap: 0;
       flex-direction: row;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
     }
   }
+
   &__about {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-md;
+    @include flex(column, $gap-md);
   }
+
   &__title {
     @include font(800, 56px, 66px, $black, -3%);
     width: 645px;
@@ -209,13 +191,12 @@
     width: 450px;
     max-width: 100%;
   }
+
   &__steps {
-    display: flex;
-    gap: $gap-lg;
+    @include flex(column, $gap-lg, center);
     margin-top: $m-xl;
-    justify-content: center;
-    flex-direction: column;
-    div:nth-child(odd) {
+
+    & > div:nth-child(odd) {
       margin-left: auto;
     }
 
@@ -228,32 +209,23 @@
 }
 
 .feature {
-  display: flex;
+  @include flex(column, $gap-lg);
   justify-content: space-between;
-  flex-direction: column;
-  gap: $gap-lg;
 
   &__image {
     width: 100%;
-
     z-index: -1;
   }
   &__about {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-lg;
+    @include flex(column, $gap-lg);
   }
 
   &__head {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-sm;
+    @include flex(column, $gap-sm);
   }
 
   &__body {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-md;
+    @include flex(column, $gap-md);
   }
 
   &__tag {
@@ -270,9 +242,7 @@
   }
 
   &__list {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-xs;
+    @include flex(column, $gap-xs);
   }
 
   &__list-item {
@@ -293,9 +263,7 @@
 
 .features {
   padding-block: $p-xxl;
-  display: flex;
-  flex-direction: column;
-  gap: $gap-lg;
+  @include flex(column, $gap-lg);
 
   &__title {
     @include font(800, 71px, 66px, $black, -3%);
@@ -306,16 +274,14 @@
     width: 557px;
     max-width: 100%;
   }
+
   &__items {
-    display: flex;
-    gap: $gap-lg;
+    @include flex(column, $gap-lg);
     justify-content: space-between;
-    flex-direction: column;
   }
+
   &__group {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-md;
+    @include flex(column, $gap-md);
   }
 
   @media (min-width: $screen-md) {
@@ -332,16 +298,13 @@
 
 .testimonials {
   padding-block: $p-xxl;
-  display: flex;
-  flex-direction: column;
 
-  gap: $gap-xl;
+  @include flex(column, $gap-xl);
 
   &__head {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-lg;
+    @include flex(column, $gap-lg);
   }
+
   &__title {
     @include font(800, 71px, 66px, $black, -3%);
   }
@@ -353,27 +316,41 @@
   }
 
   &__items {
-    display: flex;
-    flex-direction: row;
-    gap: $gap-lg;
+    @include flex(row, $gap-lg);
+    width: 100%;
     overflow-x: hidden;
+  }
+}
+
+@media (min-width: $screen-md) {
+  .testimonials__items {
+    flex-wrap: nowrap;
+  }
+
+  .testimonial {
+    flex-direction: row;
+
+    &__image {
+      height: 100%;
+      max-width: 240px;
+      width: unset;
+      object-fit: contain;
+      border-radius: 0;
+    }
   }
 }
 
 .stats {
   padding-block: $p-lg;
-  display: flex;
-  gap: $gap-lg;
-  align-items: center;
+  @include flex(row, $gap-lg, center);
+
   &__subtitle {
     display: none;
   }
 
   &__items {
     padding-inline: $p-md;
-    display: flex;
-    gap: $gap-lg;
-    justify-content: space-between;
+    @include flex(row, $gap-lg, space-between);
     flex-grow: 1;
   }
 
@@ -393,8 +370,7 @@
   }
 
   &__items {
-    display: flex;
-    gap: $gap-lg;
+    @include flex(row, $gap-lg);
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -444,14 +420,11 @@
 
 .banner {
   background-color: $blue;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: $gap-lg;
+  @include flex(column, $gap-lg, center, center);
   padding: $p-xl;
   border-radius: 20px;
   text-align: center;
+
   &__text {
     @include font(600, 42px, 50px, $white, -3%);
     max-width: 100%;
@@ -467,11 +440,9 @@
 
 .footer {
   padding-block: $p-lg;
+
   &__main {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: $gap-xl;
+    @include flex(column, $gap-xl);
     padding-block: $p-xl;
   }
 
@@ -484,20 +455,17 @@
   }
 
   &__section {
-    display: flex;
-    flex-direction: column;
+    @include flex(column, $gap-md);
     justify-content: flex-start;
-    gap: $gap-md;
   }
 
   &__section-title {
     @include font(700, 21px, 24px, $black, 0);
   }
   &__section-body {
-    display: flex;
-    flex-direction: column;
-    gap: $gap-md;
+    @include flex(column, $gap-md);
     @include font(500, 16px, 24px, $black, 0);
+
     &--compact {
       gap: $gap-sm;
     }
@@ -508,6 +476,7 @@
     text-align: center;
     padding-top: $p-xl;
   }
+
   @media (min-width: $screen-md) {
     &__main {
       flex-direction: row;
