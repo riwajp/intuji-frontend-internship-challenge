@@ -69,7 +69,7 @@ a {
       height: 7px;
       margin-left: $m-sm;
       margin-top: -2px;
-      background-image: url("../../assets/icons/caret-down.png");
+      background-image: url("../..assets/icons/caret-down.png");
       background-size: contain;
       background-repeat: no-repeat;
       vertical-align: middle;
@@ -448,7 +448,7 @@ a {
       transform: translateY(-50%);
       width: 20px;
       height: 20px;
-      background-image: url("/assets/icons/expand.png");
+      background-image: url("assets/icons/expand.png");
       background-size: 20px 20px;
       background-position: center;
       background-repeat: no-repeat;
@@ -479,21 +479,20 @@ a {
   border-radius: 20px;
   text-align: center;
 
-  background-image: url("/assets/doodles/dots.png"),
-    url("/assets/doodles/curve-horizontal.png"),
-    url("/assets/doodles/curve-vertical.png"),
-    url("/assets/doodles/triangles-1.png"),
-    url("/assets/doodles/triangles-2.png");
+  background-image: url("assets/doodles/dots.png"),
+    url("assets/doodles/curve-horizontal.png"),
+    url("assets/doodles/curve-vertical.png"),
+    url("assets/doodles/triangles-1.png"), url("assets/doodles/triangles-2.png");
   background-repeat: no-repeat;
 
   background-size: 148px, 105px, 16px, 161px, 83px;
   background-position: 20% 20%, 85% 10%, 10% 85%, 90% 85%, 20% 65%;
   @media (min-width: $screen-md) {
-    background-image: url("/assets/doodles/dots.png"),
-      url("/assets/doodles/curve-horizontal.png"),
-      url("/assets/doodles/curve-vertical.png"),
-      url("/assets/doodles/triangles-1.png"),
-      url("/assets/doodles/triangles-2.png");
+    background-image: url("assets/doodles/dots.png"),
+      url("assets/doodles/curve-horizontal.png"),
+      url("assets/doodles/curve-vertical.png"),
+      url("assets/doodles/triangles-1.png"),
+      url("assets/doodles/triangles-2.png");
     background-repeat: no-repeat;
 
     background-size: 148px, 105px, 16px, 161px, 83px;

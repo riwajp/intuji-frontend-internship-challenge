@@ -39,8 +39,8 @@
 
     &::after {
       content: "";
-      background-image: url("/assets/doodles/pattern-1.png"),
-        url("/assets/doodles/pattern-3.png");
+      background-image: url("assets/doodles/pattern-1.png"),
+        url("assets/doodles/pattern-3.png");
 
       background-repeat: no-repeat;
       background-size: 110px, 110px;
@@ -56,10 +56,10 @@
     @media (min-width: $screen-md) {
       &::after {
         content: "";
-        background-image: url("/assets/images/backgrounds/hero-bg.png"),
-          url("/assets/doodles/pattern-1.png"),
-          url("/assets/doodles/pattern-2.png"),
-          url("/assets/doodles/pattern-3.png");
+        background-image: url("assets/images/backgrounds/hero-bg.png"),
+          url("assets/doodles/pattern-1.png"),
+          url("assets/doodles/pattern-2.png"),
+          url("assets/doodles/pattern-3.png");
 
         background-repeat: no-repeat;
         background-size: 30%, 110px, 110px, 110px;
