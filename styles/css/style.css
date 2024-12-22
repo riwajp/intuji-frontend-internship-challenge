@@ -82,7 +82,7 @@
 }
 .container--hero::after {
   content: "";
-  background-image: url("/assets/images/backgrounds/pattern-1.png"), url("/assets/images/backgrounds/pattern-3.png");
+  background-image: url("/assets/doodles/pattern-1.png"), url("/assets/doodles/pattern-3.png");
   background-repeat: no-repeat;
   background-size: 110px, 110px;
   background-position: 0 90%, 100% calc(100% + 100px);
@@ -96,7 +96,7 @@
 @media (min-width: 900px) {
   .container--hero::after {
     content: "";
-    background-image: url("/assets/images/backgrounds/hero-bg.png"), url("/assets/images/backgrounds/pattern-1.png"), url("/assets/images/backgrounds/pattern-2.png"), url("/assets/images/backgrounds/pattern-3.png");
+    background-image: url("/assets/images/backgrounds/hero-bg.png"), url("/assets/doodles/pattern-1.png"), url("/assets/doodles/pattern-2.png"), url("/assets/doodles/pattern-3.png");
     background-repeat: no-repeat;
     background-size: 30%, 110px, 110px, 110px;
     background-position: 80% calc(100% + 50px), 0 90%, 100% 160px, 100% calc(100% + 100px);
@@ -167,6 +167,61 @@
   object-fit: contain;
 }
 
+@keyframes slideUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-up-animation {
+  transform: translateY(-10%);
+  opacity: 0;
+}
+.slide-up-animation--second {
+  animation-delay: 0.2s;
+}
+.slide-up-animation--third {
+  animation-delay: 0.3s;
+}
+.slide-up-animation--animate {
+  animation-name: slideUp;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0%);
+  }
+  10% {
+    transform: translateX(-10%);
+  }
+  20% {
+    transform: translateX(-20%);
+  }
+  30% {
+    transform: translateX(-30%);
+  }
+  40% {
+    transform: translateX(-40%);
+  }
+  50% {
+    transform: translateX(-40%);
+  }
+  60% {
+    transform: translateX(-30%);
+  }
+  70% {
+    transform: translateX(-20%);
+  }
+  80% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
 .quote {
   background-color: #c4c4c4;
   padding: 36px;
@@ -647,61 +702,6 @@
   max-width: 330px;
 }
 
-@keyframes slideUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-.slide-up-animation {
-  transform: translateY(-10%);
-  opacity: 0;
-}
-.slide-up-animation--second {
-  animation-delay: 0.2s;
-}
-.slide-up-animation--third {
-  animation-delay: 0.3s;
-}
-.slide-up-animation--animate {
-  animation-name: slideUp;
-  animation-duration: 0.3s;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes moveLeftRight {
-  0% {
-    transform: translateX(0%);
-  }
-  10% {
-    transform: translateX(-10%);
-  }
-  20% {
-    transform: translateX(-20%);
-  }
-  30% {
-    transform: translateX(-30%);
-  }
-  40% {
-    transform: translateX(-40%);
-  }
-  50% {
-    transform: translateX(-40%);
-  }
-  60% {
-    transform: translateX(-30%);
-  }
-  70% {
-    transform: translateX(-20%);
-  }
-  80% {
-    transform: translateX(-10%);
-  }
-  100% {
-    transform: translateX(0%);
-  }
-}
 * {
   margin: 0;
   padding: 0;

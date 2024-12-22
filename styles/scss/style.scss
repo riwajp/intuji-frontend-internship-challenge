@@ -1,12 +1,9 @@
-@import "variables/screens.scss";
-@import "variables/colors.scss";
-@import "variables/spacing.scss";
-@import "variables/typography.scss";
-@import "buttons.scss";
-@import "containers.scss";
-@import "images.scss";
-@import "misc.scss";
-@import "animation.scss";
+@import "./variables/variables.scss";
+@import "components/buttons.scss";
+@import "components/containers.scss";
+@import "components/images.scss";
+@import "components/animation.scss";
+@import "components/misc.scss";
 
 * {
   margin: 0;
